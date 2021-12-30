@@ -1,0 +1,4 @@
+export const TODO_ADD = 'TODO_ADD'
+export const TODO_REMOVE = 'TODO_REMOVE'
+export const TODO_CHANGE_STATE = 'TODO_CHANGE_STATE'
+export const FORM_CHANGE_MESSAGE = 'FORM_CHANGE_MESSAGE'
