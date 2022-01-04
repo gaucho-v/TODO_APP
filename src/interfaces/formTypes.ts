@@ -1,4 +1,4 @@
 export interface IFormState {
-  message: string,
-  buttonDisabled: boolean
+  message: string;
+  buttonDisabled: boolean;
 }

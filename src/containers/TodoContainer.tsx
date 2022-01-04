@@ -19,15 +19,15 @@ export const TodoContainer = React.memo(() => {
   const { todoList, message, buttonDisabled } = values;
   const { addTodoHandler, removeTodoHandler, changeMessageHandler, changeTodoStateHandler } = handlers;
   return (
-        <Container>
-            <TodoForm
-                message={message}
-                buttonDisabled={buttonDisabled}
-                addTodoHandler={addTodoHandler}
-                changeMessageHandler={changeMessageHandler}
-            />
-            <TodoList onRemoveTodo={removeTodoHandler} onChangeTodoState={changeTodoStateHandler} todoList={todoList}/>
-        </Container>
+    <Container>
+      <TodoForm
+        message={message}
+        buttonDisabled={buttonDisabled}
+        addTodoHandler={addTodoHandler}
+        changeMessageHandler={changeMessageHandler}
+      />
+      <TodoList onRemoveTodo={removeTodoHandler} onChangeTodoState={changeTodoStateHandler} todoList={todoList} />
+    </Container>
   );
 });
 

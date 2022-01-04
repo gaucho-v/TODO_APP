@@ -24,20 +24,20 @@ const EmptyList = styled.div`
 
 export const TodoList = React.memo(({ todoList, onRemoveTodo, onChangeTodoState }: ITodoListProps) => (
   <TodosContainer>
-    {
-            todoList && todoList.length
-              ? todoList.map(({ message, id, isActive }) => (
-                <Todo
-                  key={id}
-                  message={message}
-                  id={id}
-                  isActive={isActive}
-                  onRemoveTodo={onRemoveTodo}
-                  onChangeTodoState={onChangeTodoState}
-                />
-              ))
-              : <EmptyList />
-        }
+    {todoList && todoList.length ? (
+      todoList.map(({ message, id, isActive }) => (
+        <Todo
+          key={id}
+          message={message}
+          id={id}
+          isActive={isActive}
+          onRemoveTodo={onRemoveTodo}
+          onChangeTodoState={onChangeTodoState}
+        />
+      ))
+    ) : (
+      <EmptyList />
+    )}
   </TodosContainer>
 ));
 

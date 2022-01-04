@@ -1,36 +1,52 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "node": true
     },
     "extends": [
+        "airbnb",
+        "airbnb-typescript",
+        "plugin:react/recommended",
+        "prettier",
+        "plugin:@typescript-eslint/recommended",
         "plugin:react/jsx-runtime",
         "plugin:jsx-a11y/recommended",
         "plugin:import/recommended",
-        "plugin:react/recommended",
-        "airbnb-typescript"
+        "plugin:react-hooks/recommended",
+        "plugin:prettier/recommended"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaFeatures": {
-            "jsx": true
+            "jsx": true,
+            "modules": true,
+            "experimentalObjectRestSpread": true
         },
-        "ecmaVersion": 2021,
+        "ecmaVersion": 6,
         "project": ["tsconfig.json"] ,
         "sourceType": "module"
     },
     "plugins": [
+        "@typescript-eslint",
+        "import",
+        "react-hooks",
         "react",
+        "prettier",
         "@typescript-eslint"
     ],
     "rules": {
         "import/prefer-default-export": "off",
         "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
         "max-len": ["error", {
-            "code": 130,
+            "code": 120,
             "ignoreComments": true,
             "ignoreTrailingComments": true,
             "ignoreStrings": true
         }]
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
     }
 }

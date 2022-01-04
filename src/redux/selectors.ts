@@ -8,8 +8,8 @@ const getTodoState = ({ todoState }: IAppState): ITodoState => todoState;
 
 const getFormState = ({ formState }: IAppState): IFormState => formState;
 
-export const getTodoList = createSelector(getTodoState, state => state.todoList);
+export const getTodoList = createSelector(getTodoState, (state) => state.todoList);
 
-export const getFormMessage = createSelector(getFormState, state => state.message);
+export const getFormMessage = createSelector(getFormState, (state) => state.message);
 
-export const getFormButtonDisabled = createSelector(getFormState, state => state.buttonDisabled);
+export const getFormButtonDisabled = createSelector(getFormState, (state) => state.buttonDisabled);

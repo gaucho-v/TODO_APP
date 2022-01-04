@@ -1,7 +1,7 @@
-import { FORM_CHANGE_MESSAGE } from './actionTypes';
-import { IFormState } from '../interfaces/formTypes';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import { FORM_CHANGE_MESSAGE } from './actionTypes';
+import { IFormState } from '../interfaces/formTypes';
 import { IAction } from '../interfaces/commonTypes';
 
 const initialState: IFormState = {
@@ -15,14 +15,13 @@ const formPersistConfig = {
   whiteList: [],
 };
 
-
 const formTodoReducer = (state: IFormState = initialState, action: IAction = {}): IFormState => {
   switch (action.type) {
     case FORM_CHANGE_MESSAGE:
       return { ...state, message: action.payload, buttonDisabled: !action.payload };
+    default:
+      return state;
   }
-
-  return state;
 };
 
 export const persistedFormReducer = persistReducer(formPersistConfig, formTodoReducer);

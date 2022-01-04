@@ -1,7 +1,7 @@
 import React from 'react';
+import styled from 'styled-components';
 import { MessageInput } from './MessageInput';
 import { Button } from './Button';
-import styled from 'styled-components';
 import { ITodoFormProps } from '../interfaces/todoTypes';
 
 const InputContainer = styled.div`
@@ -13,13 +13,15 @@ const InputContainer = styled.div`
   margin-bottom: 16px;
 `;
 
-export const TodoForm = React.memo(({ message, buttonDisabled, addTodoHandler, changeMessageHandler }: ITodoFormProps) => {
-  return (
-        <InputContainer>
-            <MessageInput value={message} onChange={changeMessageHandler} placeholder={'TODO'}/>
-            <Button buttonClickHandler={addTodoHandler} buttonValue={'ADD TODO'} disabled={buttonDisabled}/>
-        </InputContainer>
-  );
-});
+export const TodoForm = React.memo(
+  ({ message, buttonDisabled, addTodoHandler, changeMessageHandler }: ITodoFormProps) => {
+    return (
+      <InputContainer>
+        <MessageInput value={message} onChange={changeMessageHandler} placeholder="TODO" />
+        <Button buttonClickHandler={addTodoHandler} buttonValue="ADD TODO" disabled={buttonDisabled} />
+      </InputContainer>
+    );
+  },
+);
 
 TodoForm.displayName = 'TodoForm';

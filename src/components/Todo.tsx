@@ -37,9 +37,7 @@ const TodoRemove = styled.div`
   cursor: pointer;
 `;
 
-export const Todo = React.memo(({
-  message, id, isActive, onRemoveTodo, onChangeTodoState,
-}: ITodoProps) => (
+export const Todo = React.memo(({ message, id, isActive, onRemoveTodo, onChangeTodoState }: ITodoProps) => (
   <TodoWrapper theme={isActive ? '#00000008' : 'none'}>
     <TodoCheckboxInput type="checkbox" onChange={onChangeTodoState(id)} checked={isActive} />
     <TodoMessage>{message}</TodoMessage>

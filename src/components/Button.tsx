@@ -9,7 +9,9 @@ const AddButton = styled.button`
 
 export const Button = React.memo(({ buttonValue, buttonClickHandler, disabled }: IButtonProps) => {
   return (
-        <AddButton onClick={buttonClickHandler} disabled={disabled}>{buttonValue}</AddButton>
+    <AddButton onClick={buttonClickHandler} disabled={disabled}>
+      {buttonValue}
+    </AddButton>
   );
 });
 
